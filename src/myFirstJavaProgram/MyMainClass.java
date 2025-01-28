@@ -4,6 +4,8 @@
  **/
 package myFirstJavaProgram; //from our java project creation, we actually created a package
 
+import sectionOOPS.Airplane;
+import sectionOOPS.Bus;
 import sectionOOPS.Car;
 import sectionOOPS.DiceRoller;
 import sectionOOPS.Dog;
@@ -11,12 +13,14 @@ import sectionOOPS.Fish;
 import sectionOOPS.Human;
 import sectionOOPS.Monitor;
 import sectionOOPS.Rabbit;
+import sectionOOPS.Ship;
 import sectionOOPS.Computer;
 import sectionOOPS.Device;
 import sectionOOPS.Garage;
 import sectionOOPS.Hawk;
 import sectionOOPS.Hero;
 import sectionOOPS.Snake;
+import sectionOOPS.Vehicles;
 public class MyMainClass { //entry point to our entire program, cos it contains the method psv main()
 
 	public static void main(String[] args) { //first method sought after by JRE when run, its absence denotes an error
@@ -344,6 +348,7 @@ public class MyMainClass { //entry point to our entire program, cos it contains 
 			 * while inheritance/abstract classes allows us assign default values to props
 			 */
 		
+		/**
 			Rabbit chinchilla = new Rabbit("chinchilla");
 			chinchilla.detectPredator();
 			chinchilla.flee();
@@ -371,21 +376,57 @@ public class MyMainClass { //entry point to our entire program, cos it contains 
 			sardines.flee();
 			sardines.hide();
 			
+//			NB: Be sure to add @Override annotation on all the methods being implemented from interface
+		**/
 
 		//====================================================================================
 		//====================================================================================		
 		//====================================================================================
 		//====================================================================================	
 
-		//OOOPS LESSON - 	 : 
-
+		//OOOPS LESSON - 16 : PolyMorphism
+		/**
+		 * Poly = "many" & morph == "forms". PolyMorphism is implemented in two forms - method
+		 * overloading (constructor overloading & copy constructors) and method overriding
+		 * (inheritance & interfaces).
+		 * 
+		 * We've seen bits of polymorphism already, but this section is going to be limited to 
+		 * (non abstract) classes as parents, just to illustrate a practical aspects of storing 
+		 * objects in arrays.
+		 * 
+		 * Parent Class = Vehicle, subclasses => [Bus, Ship, Airplane]
+		 * 
+		 * in line 4--, we are able to create an array of the parent class, and pass it objects created from teh child
+		 * classes. 
+		 * on the next line, an alternative is to create an array from the inbuilt Object class, which is the parent of 
+		 * all objects we create. doing so works for just the array but traversal requires typecasting to access object
+		 * specific methods and properties.
+		 */
+		 
+		Bus yuton = new Bus();
+		Ship titanic = new Ship();
+		Airplane boeing = new Airplane();
+		
+		//create an array of differenct objects 
+		Vehicles [] vehicles = { yuton, titanic, boeing};
+		Object [] transporters = {new Vehicles(), yuton, titanic, boeing};
+		
+		for (Vehicles vehicle : vehicles) {
+			vehicle.go();
+		}
+		
+		System.out.println();
+		
+		for (Object instance : transporters) {
+				((Vehicles) instance).go();			
+		}
 
 		//====================================================================================
 		//====================================================================================		
 		//====================================================================================
 		//====================================================================================	
 
-		//OOOPS LESSON - 	 : 
+		//OOOPS LESSON - 17 :  
 
 
 		//====================================================================================
