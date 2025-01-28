@@ -12,11 +12,17 @@ package sectionOOPS;
 import myFirstJavaProgram.Predator;
 
 public class Hawk implements Predator{
+	String breed;
+	
+	public Hawk (String breed){
+		this.breed = breed;
+	}
+	
 	public void attack() {
-		System.out.println("Target acquired...Going in for the kill!");
+		System.out.println("\tTarget acquired...Going in for the kill!");
 	}
 	
 	public void kill() {
-		System.out.println("Confirmed Kill...Target Eliminated!");
+		System.out.println("\tConfirmed Kill...Target Eliminated!");
 	}
 }

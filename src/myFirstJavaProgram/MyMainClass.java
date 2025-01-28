@@ -7,11 +7,14 @@ package myFirstJavaProgram; //from our java project creation, we actually create
 import sectionOOPS.Car;
 import sectionOOPS.DiceRoller;
 import sectionOOPS.Dog;
+import sectionOOPS.Fish;
 import sectionOOPS.Human;
 import sectionOOPS.Monitor;
+import sectionOOPS.Rabbit;
 import sectionOOPS.Computer;
 import sectionOOPS.Device;
 import sectionOOPS.Garage;
+import sectionOOPS.Hawk;
 import sectionOOPS.Hero;
 import sectionOOPS.Snake;
 public class MyMainClass { //entry point to our entire program, cos it contains the method psv main()
@@ -335,11 +338,39 @@ public class MyMainClass { //entry point to our entire program, cos it contains 
 		//====================================================================================	
 
 		//OOOPS - LESSON 15	: Interfaces
-		/**
-		 * these are templates that can be applied to classes just as inheritance works. However, 
-		 * Interfaces have one advantage, it allows us to use multiple interfaces on a class.
-		 * while inheritance/abstract classes allows us assign default values to props
-		 */
+			/**
+			 * these are templates that can be applied to classes just as inheritance works. However, 
+			 * Interfaces have one advantage, it allows us to use multiple interfaces on a class.
+			 * while inheritance/abstract classes allows us assign default values to props
+			 */
+		
+			Rabbit chinchilla = new Rabbit("chinchilla");
+			chinchilla.detectPredator();
+			chinchilla.flee();
+			chinchilla.hide();
+			
+			System.out.println();
+			
+			Hawk cooper = new Hawk("Cooper");
+			cooper.attack();
+			cooper.kill();			
+//			cooper.flee(); //error - can't access method form other interfaces not implemented
+			
+			System.out.println();
+
+			//predatory fishes
+			Fish shark = new Fish("Shark");
+			shark.attack();
+			shark.kill();
+			
+			System.out.println();
+
+			//prey-ed fishes
+			Fish sardines = new Fish("Sardine");
+			sardines.detectPredator();
+			sardines.flee();
+			sardines.hide();
+			
 
 		//====================================================================================
 		//====================================================================================		

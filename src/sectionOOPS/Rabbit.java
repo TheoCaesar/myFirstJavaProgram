@@ -12,16 +12,21 @@ package sectionOOPS;
 import myFirstJavaProgram.Prey;
 
 public class Rabbit implements Prey{
+	String breed;
+	public Rabbit (String breed){
+		this.breed = breed;
+		System.out.println("Rabbit breed (" + this.breed + ") created");
+	}
 	public void detectPredator() {
-		System.out.println("Code Red!!!...predator detected.");
+		System.out.println("\tCode Red!!!...predator detected.");
 	}
 	
 	public void flee() {
-		System.out.println("All systems go...Go Go Go!!!");
+		System.out.println("\tAll systems go...Go Go Go!!!");
 		
 	}
 	
 	public void hide() {
-		System.out.println("Dig in deep...live to fight another day!");
+		System.out.println("\tDig in deep...live to fight another day!");
 	}
 }

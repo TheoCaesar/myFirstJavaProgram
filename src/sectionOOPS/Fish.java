@@ -13,26 +13,31 @@ import myFirstJavaProgram.Predator;
 import myFirstJavaProgram.Prey;
 
 public class Fish implements Prey, Predator{	//multiple inheritance of interface
+		String breed;
+		public Fish (String breed){
+			this.breed = breed;
+			System.out.println("Fish breed (" + this.breed + ") created");
+		}
 		//prey methods
 		public void detectPredator() {
-			System.out.println("Code Red!!!...predator detected.");
+			System.out.println("\tCode Red!!!...predator detected.");
 		}
 		
 		public void flee() {
-			System.out.println("All systems go...Go Go Go!!!");
+			System.out.println("\tAll systems Swim...Swim Swim Swim!!!");
 			
 		}
 		
 		public void hide() {
-			System.out.println("Dig in deep...live to fight another day!");
+			System.out.println("\tDive into the deep...live to fight another day!");
 		}
 		
 		//predator methods
 		public void attack() {
-			System.out.println("Target acquired...Going in for the kill!");
+			System.out.println("\tTarget acquired...Swimming in for the kill!");
 		}
 		
 		public void kill() {
-			System.out.println("Confirmed Kill...Target Eliminated!");
+			System.out.println("\tConfirmed Kill...Target Eliminated!");
 		}
 }
