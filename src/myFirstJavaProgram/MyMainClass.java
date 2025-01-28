@@ -4,6 +4,8 @@
  **/
 package myFirstJavaProgram; //from our java project creation, we actually created a package
 
+import java.util.Scanner;
+
 import sectionOOPS.Airplane;
 import sectionOOPS.Bus;
 import sectionOOPS.Car;
@@ -402,7 +404,7 @@ public class MyMainClass { //entry point to our entire program, cos it contains 
 		 * all objects we create. doing so works for just the array but traversal requires typecasting to access object
 		 * specific methods and properties.
 		 */
-		 
+		/* 
 		Bus yuton = new Bus();
 		Ship titanic = new Ship();
 		Airplane boeing = new Airplane();
@@ -420,18 +422,47 @@ public class MyMainClass { //entry point to our entire program, cos it contains 
 		for (Object instance : transporters) {
 				((Vehicles) instance).go();			
 		}
-
+		*/
+		
 		//====================================================================================
 		//====================================================================================		
 		//====================================================================================
-		//====================================================================================	
 
-		//OOOPS LESSON - 17 :  
+		//OOOPS LESSON - 17 : Dynamic (Runtime) Polymorphism 
+		/**
+		 * Creating you program to accommodate the type of object during runtime (after compilation)
+		 *  we will stick to our vehicle classes created above.
+		 */
+		
+		Scanner console = new Scanner(System.in);
+		Vehicles transporter;	//declare object variable (prop)
+		
+		System.out.println("Which mode of transport please\nPress 1 for Airplane, 2 for Ships or 3 for Bus");
+		int userInput = console.nextInt();
+		
+		switch(userInput) {
+			case 1: 
+				transporter = new Airplane();			
+				transporter.go();
+				break;
+			case 2:
+				transporter = new Ship();
+				transporter.go();
+				break;
+			case 3: 
+				transporter = new Bus();
+				transporter.go();
+				break;
+			default:
+				System.out.println("Sorry, " + userInput + " is not a valid choice ");				
+		}
+		
+		console.close();
+		System.out.println("PROGRAM TERMINATED...");
 
 
 		//====================================================================================
 		//====================================================================================		
-		//====================================================================================
 		//====================================================================================	
 
 		//OOOPS LESSON - 	 : 
